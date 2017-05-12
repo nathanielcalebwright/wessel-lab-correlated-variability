@@ -316,7 +316,6 @@ def plot_LIF_network_spike_trains_membrane_potentials_LFP(ax, fontproperties,
 
     ### plot LFP ###
 
-    #NEED TO GET LFPS FROM TRIAL 15 (USING TEAMVIEWER)
     LFP_dict = get_LFPs(exc_connectivity, net_state, int_SD, num_trials,
         master_folder_path)   
     

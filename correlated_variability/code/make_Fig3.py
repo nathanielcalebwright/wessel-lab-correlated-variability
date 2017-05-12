@@ -1,3 +1,4 @@
+
 '''
 copyright (c) 2016 Nathaniel Wright
 
@@ -29,6 +30,9 @@ plot_CC_PCA_results as plot_PCA
 from sub_fig_plotting.check_chosen_pair import check_chosen_pair
 
 from sub_fig_plotting.plot_stim_trace import plot_stim_trace
+
+from analysis.compare_CCs_brief_vs_extended_stim import \
+compare_CCs_brief_vs_extended_stim as compare_CCs
 
 def make_Fig3(example_cells_to_plot = ['070314_c2', '070314_c3'],
         trial_nums_to_plot = [0, 1, 2, 29],
@@ -353,6 +357,15 @@ def make_Fig3(example_cells_to_plot = ['070314_c2', '070314_c3'],
         get_new_CC_results_all_pairs = False,
         get_new_processed_traces = False,
         master_folder_path = master_folder_path)
+
+    ###################### compare CCs by stim type (report, but don't plot)
+    compare_CCs(windows, gaps,
+        padding_for_traces, crit_freq, filt_kind,
+        replace_spikes, remove_sine_waves,
+        get_new_CC_results_all_pairs = False,
+        get_new_processed_traces = False, 
+        master_folder_path = master_folder_path)    
+
     
     if savefig == True :
         figpath = master_folder_path + '\\figures\\Fig3'

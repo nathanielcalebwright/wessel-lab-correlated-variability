@@ -30,8 +30,7 @@ def get_processed_subtraces_for_cell(cell_name,
     sum(gaps) + 2*padding) ms.  Before pulling out the subtrace, filter and 
     possibly remove spikes from the full trace.  Remove sine waves from the 
     subtraces if desired.
-    
-    Parameters
+        Parameters
     ---------- 
     cell_name : string
         name of cell of interest (e.g., '070314_c2')
@@ -67,7 +66,7 @@ def get_processed_subtraces_for_cell(cell_name,
 
     raw_traces_path = master_folder_path + '\\downsampled_traces\\'
     if not os.path.isdir(raw_traces_path):
-        os.path.mkdir(raw_traces_path)
+        os.mkdir(raw_traces_path)
     raw_traces_path += '%s\\'%cell_name    
     subtraces = []
 
